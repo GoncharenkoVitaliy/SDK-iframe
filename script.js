@@ -1,6 +1,6 @@
 "use strict"
 
-import AppExtensionsSDK from './node_modules/node_modules/app-extensions-sdk';
+import AppExtensionsSDK from './node_modules/@pipedrive/app-extensions-sdk';
 
 const sdk = await new AppExtensionsSDK().initialize();
 console.log('sdk:', sdk);
