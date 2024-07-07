@@ -11,6 +11,10 @@
 <body class="budy">
 	<iframe id="my-iframe" src="./form.html" title="Iframe Example"></iframe>
 
+	<script>
+		window.objData = {};
+		if(Object.keys(window.objData).size !== 0) {console.log('html', objData)};
+	</script>
 	<script type="module" src="./iframe.js"></script>
 </body>
 

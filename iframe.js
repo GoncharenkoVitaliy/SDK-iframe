@@ -1,24 +1,23 @@
 'use strict';
 
-import AppExtensionsSDK from './node_modules/@pipedrive/app-extensions-sdk';
+// import AppExtensionsSDK from './node_modules/@pipedrive/app-extensions-sdk';
 
-const sdk = await new AppExtensionsSDK().initialize();
-console.log('sdk:', sdk);
+// const sdk = await new AppExtensionsSDK().initialize();
+// console.log('sdk:', sdk);
 
-const { status } = await sdk.execute(AppExtensionsSDK.Command.OPEN_MODAL, {
-	type: AppExtensionsSDK.Modal.CUSTOM_MODAL,
-	action_id: 'Open settings',
-	data: {
-		item: 'xyz',
-	},
-});
+// const { status } = await sdk.execute(AppExtensionsSDK.Command.OPEN_MODAL, {
+// 	type: AppExtensionsSDK.Modal.CUSTOM_MODAL,
+// 	action_id: 'Open settings',
+// 	data: {
+// 		item: 'xyz',
+// 	},
+// });
 
 
-// pipedriveUI.modal.openByName('NEW Create a job three');
-
-// function saveData() {
-// 	const link = 'https://goncharenkovitaliy.github.io/iframe-pipedrive/?code=13525530.21566062.3414aafa12ac87d2317a1241a393e0d952c21a3e';
-// 	// console.log('objData:', objData);
+// function saveData(objData) {
+// 	const link = 'https://goncharenkovitaliy.github.io/iframe-pipedrive/`';
+// 	console.log('objData:', objData);
+// 	Object.keys(objData).size
 
 // 	fetch(link, {
 // 		method: 'POST',
@@ -27,15 +26,23 @@ const { status } = await sdk.execute(AppExtensionsSDK.Command.OPEN_MODAL, {
 // 		},
 // 		body: JSON.stringify({
 // 			title: 'New deal',
-// 			// value: objData
+// 			value: objData
 // 		})
 // 	})
-// 	.then(response => {
-// 		if (!response.ok) {
-// 			throw new Error('The network response was incorrect');
-// 		}
-// 		console.log('response', response);
-// 		return response.json();
-// 	})
-// 	.catch(error => console.error('Fetch error:', error));
+// 		.then(response => {
+// 			if (!response.ok) {
+// 				throw new Error('The network response was incorrect');
+// 			}
+// 			console.log('response(iframe):', response);
+// 			return response.json();
+// 		})
+// 		.then(data => console.log('data(iframe):', data))
+// 		.catch(error => console.error('Fetch error:', error));
 // }
+
+// window.addEventListener('message', function (event) {
+// 	if (event.data && event.data.type === 'formData') {
+// 		const objData = event.data.data;
+// 		saveData(objData);
+// 	}
+// });

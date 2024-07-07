@@ -1,5 +1,18 @@
 "use strict"
 
+// import AppExtensionsSDK from './node_modules/@pipedrive/app-extensions-sdk';
+
+// const sdk = await new AppExtensionsSDK().initialize();
+// console.log('sdk:', sdk);
+
+// const { status } = await sdk.execute(AppExtensionsSDK.Command.OPEN_MODAL, {
+// 	type: AppExtensionsSDK.Modal.CUSTOM_MODAL,
+// 	action_id: 'Open settings',
+// 	data: {
+// 		item: 'xyz',
+// 	},
+// });
+
 const form = document.querySelector('#form');
 form.addEventListener('submit', formSend);
 
@@ -38,6 +51,8 @@ async function formSend(event) {
 		input.forEach((elem) => {
 			objData[elem.name] = elem.value;
 		});
+
+		// window.parent.postMessage({ type: 'formData', data: objData }, '*');
 
 		const buttonSubmit = document.querySelector('.create-job');
 		buttonSubmit.textContent = 'Request is sent';
