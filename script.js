@@ -8,9 +8,9 @@ const { status } = await sdk.execute(AppExtensionsSDK.Command.OPEN_MODAL, {
 	type: AppExtensionsSDK.Modal.CUSTOM_MODAL,
 	action_id: 'Open settings',
 	data: {
-	  item: 'xyz',
+		item: 'xyz',
 	},
- });
+});
 
 // const { status, id } = await sdk.execute(Command.OPEN_MODAL, {
 // 	type: Modal.DEAL,
