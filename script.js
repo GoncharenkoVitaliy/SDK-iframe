@@ -1,8 +1,9 @@
 "use strict"
 
-import AppExtensionsSDK from '@pipedrive/app-extensions-sdk';
+import AppExtensionsSDK from './node_modules/node_modules/app-extensions-sdk';
 
 const sdk = await new AppExtensionsSDK().initialize();
+console.log('sdk:', sdk);
 
 const { status } = await sdk.execute(AppExtensionsSDK.Command.OPEN_MODAL, {
 	type: AppExtensionsSDK.Modal.CUSTOM_MODAL,
@@ -11,14 +12,6 @@ const { status } = await sdk.execute(AppExtensionsSDK.Command.OPEN_MODAL, {
 		item: 'xyz',
 	},
 });
-
-// const { status, id } = await sdk.execute(Command.OPEN_MODAL, {
-// 	type: Modal.DEAL,
-// 	prefill: {
-// 		title: 'Important deal',
-// 	},
-// });
-
 
 const form = document.querySelector('#form');
 form.addEventListener('submit', formSend);
