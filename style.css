@@ -1,0 +1,10 @@
+.budy{
+	display: flex;
+	justify-content: center;
+}
+#my-iframe {
+	width: 750px;
+	height: 690px;
+	margin: 0;
+	padding: 0;
+}
