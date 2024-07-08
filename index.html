@@ -1,21 +1,77 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="./style.css">
-	<title>Iframe</title>
+	<link rel="stylesheet" href="./styleForm.css">
+	<title>NEW Create a job</title>
 </head>
 
-<body class="budy">
-	<iframe id="my-iframe" src="./form.html" title="Iframe Example"></iframe>
+<body>
+	<header class="header">
+		<p class="header__name-card">NEW Create a job</p>
+		<button class="header__button-close"></button>
+	</header>
+	<main class="main">
+		<form action="#" id="form" name="forms">
+			<div class="container">
+				<div class="group">
+					<h1>Client details</h1>
+					<div class="wrapper">
+						<input name="First-name" type="text" class="data first-name border _req" placeholder="First Name *">
+						<input name="Last-name" type="text" class="data last-Name border" placeholder="Last name">
+						<input name="Telephone" type="tel" class="data telephon border" placeholder="Telephone">
+						<input name="Email" type="email" class="data email border _req" placeholder="Email *">
+					</div>
+				</div>
+				<div class="group">
+					<h1>Job type</h1>
+					<div class="wrapper">
+						<select name="Select job type" id="select-job-type" class="data border _req">
+							<option value="" autofocus></option>
+							<option value="Select job type">Select job type</option>
+						</select>
+						<select name="GL Pinelass" id="g-l-pinelass" class="data border">
+							<option value="" autofocus></option>
+							<option value="GL Pinelass">GL Pinelass</option>
+						</select>
+						<textarea name="Job description" class="data job_description border"
+							placeholder="Job description (optional)"></textarea>
+					</div>
+				</div>
+				<div class="group">
+					<h1>Service location</h1>
+					<div class="wrapper">
+						<input name="Adress" type="text" class="data adress border _req" placeholder="Adress *">
+						<input name="City" type="text" class="data city border" placeholder="City">
+						<input name="State" type="text" class="data state border" placeholder="State">
+						<input name="City" type="number" class="data postcode border" placeholder="Postcode">
+						<select name="Postcode" id="tampa" class="data border">
+							<option value="" autofocus></option>
+							<option value="Tampa">Tampa</option>
+						</select>
+					</div>
+				</div>
+				<div class="group">
+					<h1>Scheduled</h1>
+					<div class="wrapper">
+						<input name="date" type="date" class="data date border">
+						<input name="Time start" type="time" class="data time-start border" value="08:00">
+						<input name="Time end" type="time" class="data time-end border" value="08:00">
+						<select name="Technician" id="technician" class="data border">
+							<option value="" autofocus></option>
+							<option value="Select technician">Select technician</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<footer class="footer">
+				<button type="submit" class="create-job button">Create job</button>
+				<button class="save-info button">Save info</button>
+			</footer>
+		</form>
+	</main>
 
-	<script>
-		window.objData = {};
-		if(Object.keys(window.objData).size !== 0) {console.log('html', objData)};
-	</script>
-	<script type="module" src="./iframe.js"></script>
+	<script type="module" src="./script.js"></script>
 </body>
-
-</html>

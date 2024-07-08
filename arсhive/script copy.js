@@ -1,17 +1,17 @@
 "use strict"
 
-import AppExtensionsSDK from './node_modules/@pipedrive/app-extensions-sdk';
+// import AppExtensionsSDK from './node_modules/@pipedrive/app-extensions-sdk';
 
-const sdk = await new AppExtensionsSDK().initialize();
-console.log('sdk:', sdk);
+// const sdk = await new AppExtensionsSDK().initialize();
+// console.log('sdk:', sdk);
 
-const { status } = await sdk.execute(AppExtensionsSDK.Command.OPEN_MODAL, {
-	type: AppExtensionsSDK.Modal.CUSTOM_MODAL,
-	action_id: 'Open settings',
-	data: {
-		item: 'xyz',
-	},
-});
+// const { status } = await sdk.execute(AppExtensionsSDK.Command.OPEN_MODAL, {
+// 	type: AppExtensionsSDK.Modal.CUSTOM_MODAL,
+// 	action_id: 'Open settings',
+// 	data: {
+// 		item: 'xyz',
+// 	},
+// });
 
 const form = document.querySelector('#form');
 form.addEventListener('submit', formSend);
@@ -52,6 +52,8 @@ function formSend(event) {
 			objData[elem.name] = elem.value;
 		});
 
+		// window.parent.postMessage({ type: 'formData', data: objData }, '*');
+
 		const buttonSubmit = document.querySelector('.create-job');
 		buttonSubmit.textContent = 'Request is sent';
 		buttonSubmit.style.background = 'red';
@@ -64,8 +66,8 @@ function saveData(objData) {
 	const link = 'https://goncharenkovitaliy.github.io/iframe-pipedrive/`';
 	console.log('objData:', objData);
 
-	const arrKeys = Object.keys(objData);
-	console.log('objData.length:', arrKeys.length);
+	// const arrKeys = Object.keys(objData);
+	// console.log('objData.length:', arrKeys.length);
 
 	fetch(link, {
 		method: 'POST',

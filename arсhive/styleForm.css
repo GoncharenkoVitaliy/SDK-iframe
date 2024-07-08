@@ -4,7 +4,8 @@
 	box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
 	box-sizing: border-box;
 	width: 100%;
 	min-height: 100vh;
@@ -17,17 +18,24 @@ html, body {
 	outline: none;
 }
 
-button, select {
+button,
+select {
 	cursor: pointer;
 }
 
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
 	font-family: inherit;
 	font-size: inherit;
 }
 
 /* убираем цвет фона при автозаполнении */
-input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
 	-webkit-background-clip: text;
 	transition: background-color 5000s ease-in-out 0s;
 }
@@ -51,6 +59,7 @@ input {
 	--margin-b: 5px;
 	--size-elem: 49.2%;
 }
+
 /* ==================================================================== */
 .header{
 	display: flex;
