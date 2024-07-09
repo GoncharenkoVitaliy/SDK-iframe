@@ -157,3 +157,37 @@
 //     }
 // });
 
+const fetch = require('node-fetch'); // Подключаем модуль node-fetch
+
+const apiToken = 'YOUR_API_TOKEN';
+const companyDomain = 'YOUR_COMPANY_DOMAIN';
+
+const deal = {
+    title: 'Your deal title goes here',
+    user_id: 'The user ID goes here'
+};
+
+const url = `https://${companyDomain}.pipedrive.com/v1/deals?api_token=${apiToken}`;
+
+(async () => {
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(deal)
+        });
+
+        if (response.ok) {
+            const result = await response.json();
+            if (result.data.id) {
+                console.log(`New deal added for user ${result.data.user_id.id}`);
+            }
+        } else {
+            console.error('Error sending request:', response.statusText);
+        }
+    } catch (error) {
+        console.error('Error executing request:', error.message);
+    }
+})();
